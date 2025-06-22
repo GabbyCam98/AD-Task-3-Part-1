@@ -49,6 +49,15 @@ $busLogos = [
     <!-- Timetable section -->
     <div class="content">
 
+        <div class="error-handler">
+            <?php
+            include('../../handlers/postgreChecker.handler.php');
+            ?>
+            <?php
+            include('../../handlers/mongodbChecker.handler.php');
+            ?>
+        </div>
+
         <?php
 
         foreach ($busRoutes as $company => $routes) {
