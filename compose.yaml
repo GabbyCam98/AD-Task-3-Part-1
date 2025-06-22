@@ -4,7 +4,7 @@ services:
       context: .
     container_name: ad-activity-3-service
     ports:
-      - "8000:8000"
+      - "8080:8000"
     develop:
       watch:
         - path: .
