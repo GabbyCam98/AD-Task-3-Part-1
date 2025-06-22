@@ -38,7 +38,7 @@ Change the following:
 - [x] Change all `web-app-php`.
   > Using `ctrl` + `shift` + `D`, each press in `D` will select another similar text and its not case sensetive.
 - [x] Update Database names: `MONGO_INITDB_DATABASE` & `POSTGRES_DB`
-- [ ] (Optional) Can Change External ports <External Port>:<Internal Port> ex.: "27017:27017" -> "23567:27017"
+- [x] (Optional) Can Change External ports <External Port>:<Internal Port> ex.: "27017:27017" -> "23567:27017"
 
 ### 4. Update the Checker
 
@@ -48,7 +48,7 @@ Change the following:
 - [x] `postgreChecker.handler.php`
   - [x] change the `5112` with your updated port with internal/external port
     > `$port = "5112";` -> `$port = "5555";`
-- [ ] Spin up the project: in terminal use the command: `docker compose up` and in new cmd is `docker compose watch`
+- [x] Spin up the project: in terminal use the command: `docker compose up` and in new cmd is `docker compose watch`
 - [ ] Add the checker in any pages and wait for either of the 2:
       All working:
 
@@ -80,11 +80,11 @@ composer require vlucas/phpdotenv
 
 Make sure important informations are hidden and tucked . as in testing of for the checker they should be changed from hard codded to env based
 
-- [ ] Fill all the following data
+- [x] Fill all the following data
   > Restart the docker after this. both `docker compose watch` and `docker compose up`
 - [ ] Change the hard coded of checkers to env based
-- [ ] Create a `envSetter.util.php` code distributing all the env
-- [ ] Update `mongodbChecker.handler.php` and `postgreChecker.handler.php`
+- [x] Create a `envSetter.util.php` code distributing all the env
+- [x] Update `mongodbChecker.handler.php` and `postgreChecker.handler.php`
       All working:
 
   ```html
@@ -101,7 +101,7 @@ Make sure important informations are hidden and tucked . as in testing of for th
 
 Using `Database` a tool at the tool tab manage and view your database
 
-- [ ] Make Sure the Database is working. Go to Docker Desktop and make sure the `image` of `postgre` is green.
+- [x] Make Sure the Database is working. Go to Docker Desktop and make sure the `image` of `postgre` is green.
 - [ ] In `Database` click `Create Connection`
 - [ ] Select `PostgreSQL`
 - [ ] Setup connection: Port, Username, Password and Database
