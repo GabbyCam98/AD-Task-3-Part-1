@@ -26,7 +26,6 @@ $busLogos = [
         rel="stylesheet">
 
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/header.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
 
 </head>
@@ -34,18 +33,10 @@ $busLogos = [
 <body>
 
     <!-- header section -->
-    <header class="header">
-        <div class="left-section">
-            <a href="../../index.php">
-                <img src="../../assets/img/travelez-green.png" alt="travelEZ logo">
-            </a>
-        </div>
-        <div class="middle-section">
-        </div>
-        <div class="right-section">
-            <button class="nav-header">About Us</button>
-        </div>
-    </header>
+    <?php
+    require_once("/layouts/header.layout.php");
+    ?>
+
     <!-- Timetable section -->
     <div class="content">
 
@@ -121,16 +112,10 @@ $busLogos = [
     </div>;
 
     <!-- footer section -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-image">
-                <img src="../../assets/img/travelez-green.png" alt="TravelEZ Logo">
-            </div>
-            <div class="copyright-info">
-                <p>© 2025 TravelEZ Philippines, All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php
+    require_once("/layouts/footer.layout.php");
+    ?>
+
 
 
 </body>
