@@ -9,15 +9,11 @@
   </a>
   <h3 align="center">AD Activity 3</h3>
 </div>
-<!-- TODO: Make a short description -->
 <div align="center">
   Short Description. (Optional)
 </div>
 
 <br />
-
-<!-- TODO: Change the zyx-0314 into your github username  -->
-<!-- TODO: Change the WD-Template-Project into the same name of your folder -->
 
 ![](https://visit-counter.vercel.app/counter.png?page=gabbycam98/AD-Activity-3)
 
@@ -28,7 +24,6 @@
 <br />
 <br />
 
-<!-- TODO: If you want to add more layers for your readme -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -56,22 +51,18 @@
 
 ## Overview
 
-<!-- TODO: To be changed -->
 <!-- The following are just sample -->
 
 Description of the project in details.
 
 ### Key Components
 
-<!-- TODO: List of Key Components -->
 <!-- The following are just sample -->
 
 - Authentication & Authorization
 - CRUD Operations for Invetory System
 
 ### Technology
-
-<!-- TODO: List of Technology Used -->
 
 #### Language
 
@@ -158,8 +149,6 @@ AD-ProjectName
 > The following should be renamed: name.css, name.js, name.jpeg/.jpg/.webp/.png, name.component.php(but not the part of the `component.php`), Name.utils.php(but not the part of the `utils.php`)
 
 ## Resources
-
-<!-- TODO: Add References -->
 
 | Title        | Purpose                                                                       | Link          |
 | ------------ | ----------------------------------------------------------------------------- | ------------- |
