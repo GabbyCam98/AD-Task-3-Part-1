@@ -1,0 +1,169 @@
+body {
+  font-family: "Roboto", Arial;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: rgb(236, 236, 236);
+  background-image: url(../../assets/img/img-travelez-bus-ai.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-top: 80px;
+  padding-bottom: 70px;
+}
+
+.container {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.landing-page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.description-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 500px;
+  background-color: white;
+  padding: 25px 20px;
+  border-radius: 20px;
+}
+
+.travelez-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.travelez-description h1 {
+  color: #490046;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.travelez-description p {
+  line-height: 20px;
+  width: 100%;
+  padding-bottom: 20px;
+  padding-top: -20px;
+  margin-top: 0px;
+}
+
+.schedule-container {
+  display: block;
+  flex-direction: column;
+
+  align-items: center;
+  padding-bottom: 35px;
+  padding-top: 10px;
+}
+
+.company-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  height: 70px;
+}
+
+.company-container h1 {
+  color: #cbff4d;
+}
+
+.company-container img {
+  width: 200px;
+}
+
+.company-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 25px;
+  row-gap: 20px;
+}
+
+.route {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  border: 1px solid rgb(230, 229, 229);
+  box-shadow: 2px 2px 7px rgb(0, 0, 0, 0.1);
+}
+
+.departed {
+  color: rgb(204, 204, 204);
+  font-weight: 400;
+}
+
+.not-departed {
+  color: green;
+}
+
+.boarding {
+  color: orange;
+}
+
+button {
+  font-family: "Roboto", Arial;
+}
+
+.btn-logo {
+  color: white;
+}
+
+.btn-1:hover,
+.btn-2:hover {
+  background-color: #cbff4d;
+  color: #490046;
+  transition: background-color 0.2s ease;
+}
+
+.btn-1,
+.btn-2 {
+  background-color: #490046;
+  border: solid;
+  height: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-width: 0px;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #cbff4d;
+  transition: background-color 0.2s ease;
+}
