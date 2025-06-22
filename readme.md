@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/zyx-0314/">
-    <img src="./assets/img/gabcee-white-bold.png" alt="Nyebe" height="100">
+    <img src="./assets/img/gabcee-white-bold.png" alt="GabCamino" height="100">
   </a>
   <h3 align="center">AD Activity 3</h3>
 </div>
