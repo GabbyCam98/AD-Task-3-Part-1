@@ -7,8 +7,8 @@
 
 ## 1. Modifying Documentation: Update Readme
 
-- [ ] Check all the TODO Tasks
-- [ ] Delete `TODO` mark when done modifying
+- [x] Check all the TODO Tasks
+- [x] Delete `TODO` mark when done modifying
 
 ## 2. Modifyuing Composer: Update `composer.json`
 
