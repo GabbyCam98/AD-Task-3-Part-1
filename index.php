@@ -45,6 +45,16 @@
                         or other key destinations, TravelEZ helps you explore available routes offered by various bus
                         companies!</p>
                 </div>
+
+                <div class="error-handler">
+                    <?php
+                    include('handlers/postgreChecker.handler.php');
+                    ?>
+                    <?php
+                    include('handlers/mongodbChecker.handler.php');
+                    ?>
+                </div>
+
                 <div class="button-container">
                     <a href="pages/timetable/index.php">
                         <button class="btn-1">Let's Go!</button>
