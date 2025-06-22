@@ -1,0 +1,20 @@
+{
+    "dbcode.connections": [
+        {
+            "connectionId": "CaYTJWhw5Zx1ckBNlG8fw",
+            "name": "activity3DB",
+            "driver": "postgres",
+            "connectionType": "host",
+            "host": "localhost",
+            "port": 5511,
+            "ssl": false,
+            "username": "user",
+            "password": "",
+            "savePassword": "secretStorage",
+            "database": "taskmanagerDB",
+            "readOnly": false,
+            "role": "development",
+            "connectionTimeout": 30
+        }
+    ]
+}
