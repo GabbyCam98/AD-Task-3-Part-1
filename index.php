@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelEz - Know Where to Go, When to Go!</title>
+    <link rel="icon" href="./assets/img/travelez-icon-green.png">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,8 +22,9 @@
 
     <!-- header section -->
     <?php
-    require_once("/layouts/header.layout.php");
+    include_once("./layouts/header.layout.php");
     ?>
+
 
 
     <main>
@@ -35,14 +38,10 @@
                         companies!</p>
                 </div>
 
-                <div class="error-handler">
-                    <?php
-                    include('handlers/postgreChecker.handler.php');
-                    ?>
-                    <?php
-                    include('handlers/mongodbChecker.handler.php');
-                    ?>
-                </div>
+                <?php
+                include('handlers/postgreChecker.handler.php');
+                include('handlers/mongodbChecker.handler.php');
+                ?>
 
                 <div class="button-container">
                     <a href="pages/timetable/index.php">
@@ -58,7 +57,7 @@
 
     <!-- footer section -->
     <?php
-    require_once("/layouts/footer.layout.php");
+    include_once('./layouts/footer.layout.php');
     ?>
 
 
