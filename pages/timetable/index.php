@@ -18,7 +18,9 @@ $busLogos = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TravelEZ - Live Timetable</title>
+    <link rel="icon" href="./assets/img/travelez-icon-green.png">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,20 +36,20 @@ $busLogos = [
 
     <!-- header section -->
     <?php
-    require_once("/layouts/header.layout.php");
+    include_once "../../layouts/header.layout.php";
     ?>
+
 
     <!-- Timetable section -->
     <div class="content">
 
-        <div class="error-handler">
+        <div class="database-checker-container">
             <?php
-            include('../../handlers/postgreChecker.handler.php');
-            ?>
-            <?php
-            include('../../handlers/mongodbChecker.handler.php');
+            require_once('../../handlers/postgreChecker.handler.php');
+            require_once('../../handlers/mongodbChecker.handler.php');
             ?>
         </div>
+
 
         <?php
 
@@ -113,7 +115,7 @@ $busLogos = [
 
     <!-- footer section -->
     <?php
-    require_once("/layouts/footer.layout.php");
+    include "../../layouts/footer.layout.php";
     ?>
 
 
