@@ -43,9 +43,12 @@
                 include('handlers/mongodbChecker.handler.php');
                 ?>
 
-                <div class="button-container">
+                <div class="action-button">
                     <a href="pages/timetable/index.php">
-                        <button class="btn-1">Let's Go!</button>
+                        <button class="proceed-btn">Let's Go!</button>
+                    </a>
+                    <a href="pages/loginPage/index.php">
+                        <button class="login-btn">login</button>
                     </a>
                 </div>
             </div>
