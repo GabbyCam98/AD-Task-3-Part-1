@@ -159,7 +159,7 @@ button {
   color: white;
 }
 
-.btn-1:hover,
+.proceed-btn:hover,
 .btn-2:hover {
   background-color: #cbff4d;
   color: #490046;
