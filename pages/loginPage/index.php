@@ -45,7 +45,7 @@ $currentTime = strtotime(date("H:i"));
             <h1>Log In</h1>
 
 
-            <form action="../../pages/timetable/timetable.php" method="post">
+            <form action="../../pages/loginPage/index.php" method="post">
 
                 <label for="username">
                     <p>Username: </p>
@@ -64,11 +64,19 @@ $currentTime = strtotime(date("H:i"));
 
             </form>
 
+            <div>
+                Not a member yet?
+                <a href="../../pages/signUp/index.php"> Create account</a>
 
-            <?php
-            require_once('../../handlers/postgreChecker.handler.php');
-            require_once('../../handlers/mongodbChecker.handler.php');
-            ?>
+            </div>
+
+            <div class="db-connection-stat">
+                <?php
+                require_once('../../handlers/postgreChecker.handler.php');
+                require_once('../../handlers/mongodbChecker.handler.php');
+                ?>
+
+            </div>
 
         </div>
 
