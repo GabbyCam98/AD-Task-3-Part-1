@@ -47,10 +47,13 @@
                 </a>
             </div>
 
-            <?php
-            include('handlers/postgreChecker.handler.php');
-            include('handlers/mongodbChecker.handler.php');
-            ?>
+            <div class="db-connection-stat">
+
+                <?php
+                include('handlers/postgreChecker.handler.php');
+                include('handlers/mongodbChecker.handler.php');
+                ?>
+            </div>
 
         </div>
 
