@@ -82,11 +82,11 @@ Change the following:
 ✅ PostgreSQL Connection
 `
 
-          Need Debugging:
-          ```html
-          ❌ MongoDB connection failed: ...
-          ❌ Connection Failed: ...
-          ```
+                      Need Debugging:
+                      ```html
+                      ❌ MongoDB connection failed: ...
+                      ❌ Connection Failed: ...
+                      ```
 
   > restart `docker compose up` and `docker compose watch` if you modify the docker after you spin up
 
@@ -249,9 +249,9 @@ In this step we will design an automation that resets the database when needed a
   - Apply SQL Code
 - Output: Create the Table/s Ready for Use
 
-- [ ] Creating a new util code `dbResetPostgresql.util.php`
+- [x] Creating a new util code `dbResetPostgresql.util.php`
 
-- [ ] Setting up requirements
+- [x] Setting up requirements
   > Just copy this
 
 ```php
@@ -267,7 +267,7 @@ require_once 'bootstrap.php';
 require_once UTILS_PATH . '/envSetter.util.php';
 ```
 
-- [ ] Adding the database host and connecting
+- [x] Adding the database host and connecting
 
 ```php
 $host = $databases['pgHost'];
@@ -283,7 +283,7 @@ $pdo = new PDO($dsn, $username, $password, [
 ]);
 ```
 
-- [ ] Using specific commands to use to automatically generate the database tables
+- [x] Using specific commands to use to automatically generate the database tables
 
 ```php
 // Just indicator it was working
@@ -313,7 +313,7 @@ foreach (['users'] as $table) {
 }
 ```
 
-- [ ] Add the command in the `composer.json`
+- [x] Add the command in the `composer.json`
 
   - below `scripts` add a new library key set
   - `"postgresql:reset": "php utils/dbResetPostgresql.util.php"`
@@ -330,7 +330,7 @@ foreach (['users'] as $table) {
 
 Seeding is terminology used refering to inputing data in database upon creation, making sure it is connected and can view data
 
-- [ ] duplicate the `dbResetPostgresql.util.php` and rename it `dbSeederPostgresql.util.php`
+- [x] duplicate the `dbResetPostgresql.util.php` and rename it `dbSeederPostgresql.util.php`
 - [ ] add the following logic for
 - Input: Database Code
 - Process:
