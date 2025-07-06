@@ -82,11 +82,11 @@ Change the following:
 ✅ PostgreSQL Connection
 `
 
-        Need Debugging:
-        ```html
-        ❌ MongoDB connection failed: ...
-        ❌ Connection Failed: ...
-        ```
+          Need Debugging:
+          ```html
+          ❌ MongoDB connection failed: ...
+          ❌ Connection Failed: ...
+          ```
 
   > restart `docker compose up` and `docker compose watch` if you modify the docker after you spin up
 
@@ -215,7 +215,7 @@ Task: Users can be divided into group, they can login, basic information and rol
 Task:
 Create more tables for the following
 
-- [ ] Projects
+- [x] Projects
 - [x] Project ↔ User assignments (project_user)
 - [x] Tasks
 
