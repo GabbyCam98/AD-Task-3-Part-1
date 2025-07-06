@@ -14,6 +14,8 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/sections.css">
+
 
 
 </head>
@@ -28,33 +30,31 @@
 
 
     <main>
-        <section class="landing-page">
-            <div class="description-container">
-                <div class="travelez-description">
-                    <h1>Welcome to TravelEZ!</h1>
-                    <p class="description">TravelEZ is a user-friendly website that provides a comprehensive timetable
-                        of bus routes across the Philippines. Whether you're planning a trip from Manila to North Luzon
-                        or other key destinations, TravelEZ helps you explore available routes offered by various bus
-                        companies!</p>
-                </div>
+        <div class="container landing">
 
-                <?php
-                include('handlers/postgreChecker.handler.php');
-                include('handlers/mongodbChecker.handler.php');
-                ?>
+            <h1>Welcome to TravelEZ!</h1>
+            <p>TravelEZ is a user-friendly website that provides a comprehensive timetable of bus routes across the
+                Philippines. Whether you're planning a trip from Manila to North Luzon or other key destinations,
+                TravelEZ helps you explore available routes offered by various bus companies!</p>
 
-                <div class="action-button">
-                    <a href="pages/timetable/index.php">
-                        <button class="proceed-btn">Let's Go!</button>
-                    </a>
-                    <a href="pages/loginPage/index.php">
-                        <button class="login-btn">login</button>
-                    </a>
-                </div>
+
+            <div>
+                <a href="pages/timetable/index.php">
+                    <button class="btn-1 proceed">Continue as Guest</button>
+                </a>
+                <a href="pages/loginPage/index.php">
+                    <button class="btn-2 login">Log In</button>
+                </a>
             </div>
 
+            <?php
+            include('handlers/postgreChecker.handler.php');
+            include('handlers/mongodbChecker.handler.php');
+            ?>
 
-        </section>
+        </div>
+
+
 
     </main>
 
