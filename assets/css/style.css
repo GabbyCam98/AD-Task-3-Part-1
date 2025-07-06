@@ -17,8 +17,14 @@ main {
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 0px;
+}
+
+h1 {
+  color: #490046;
 }
 
 .content {
@@ -47,50 +53,6 @@ main {
   padding-bottom: 13px;
   margin-bottom: 30px;
   margin-top: 20px;
-}
-
-.container {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
-.landing-page {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.description-container {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 500px;
-  background-color: white;
-  padding: 25px 20px;
-  border-radius: 20px;
-}
-
-.travelez-description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.travelez-description h1 {
-  color: #490046;
-  font-weight: 700;
-  font-size: 30px;
-}
-
-.travelez-description p {
-  line-height: 20px;
-  width: 100%;
-  padding-bottom: 20px;
-  padding-top: -20px;
-  margin-top: 0px;
 }
 
 .schedule-container {
@@ -153,17 +115,12 @@ main {
 
 button {
   font-family: "Roboto", Arial;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .btn-logo {
   color: white;
-}
-
-.proceed-btn:hover,
-.btn-2:hover {
-  background-color: #cbff4d;
-  color: #490046;
-  transition: background-color 0.2s ease;
 }
 
 .btn-1,
@@ -175,10 +132,15 @@ button {
   padding-right: 20px;
   border-width: 0px;
   border-radius: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
   font-size: 15px;
   font-weight: 700;
   color: #cbff4d;
+  transition: background-color 0.2s ease;
+}
+
+.btn-1:hover,
+.btn-2:hover {
+  background-color: #cbff4d;
+  color: #490046;
   transition: background-color 0.2s ease;
 }
