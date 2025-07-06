@@ -91,7 +91,7 @@ $busLogos = [
 
                     if ($tripSched < $currentTime) {
                         echo "<td class='departed' style='text-align: right' >Departed</td>";
-                    } elseif ($boardingTime <= 45 && $boardingTime >= 30) {
+                    } else if ($boardingTime <= 60 && $boardingTime >= 0) {
                         echo "<td class='boarding' style='text-align: right'>Boarding</td>";
                     } else {
                         echo "<td class='not-departed' style='text-align: right' >Scheduled</td>";
@@ -110,8 +110,7 @@ $busLogos = [
             <button class="btn-2">Return to Home</button>
         </a>
 
-
-    </div>;
+    </div>
 
     <!-- footer section -->
     <?php
