@@ -14,12 +14,15 @@ $username = $databases['pgUser'];
 $password = $databases['pgPassword'];
 $dbname = $databases['pgDB'];
 
+// connection
+
 $dsn = "pgsql:host={$databases['pgHost']};port={$port};dbname={$dbname}";
 
 $pdo = new PDO($dsn, $username, $password, [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 ]);
 
+// creation  
 echo "Applying schema from database/users.model.sql…\n";
 
 $sql = file_get_contents('database/users.model.sql');
@@ -32,6 +35,7 @@ if ($sql === false) {
 
 $pdo->exec($sql);
 
+// truncating
 echo "Truncating tables…\n";
 foreach (['users'] as $table) {
     $pdo->exec("TRUNCATE TABLE {$table} RESTART IDENTITY CASCADE;");
