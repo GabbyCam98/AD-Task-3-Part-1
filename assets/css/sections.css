@@ -1,0 +1,51 @@
+.travelez-logo {
+  height: 25px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 100%;
+  height: 300px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 13px;
+  background-color: white;
+}
+
+.container p {
+  display: flex;
+
+  max-width: 570px;
+  padding: 0px;
+  margin-bottom: 4px;
+}
+
+input {
+  margin-bottom: 6.5px;
+  width: 260px;
+  height: 25px;
+  background-color: rgb(240, 240, 240);
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightgrey;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
