@@ -27,6 +27,19 @@ h1 {
   color: #490046;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  padding: 0px;
+}
+
+button {
+  font-family: "Roboto", Arial;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -113,19 +126,32 @@ h1 {
   color: orange;
 }
 
-button {
-  font-family: "Roboto", Arial;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-.btn-logo {
-  color: white;
-}
-
-.btn-1,
-.btn-2 {
+.btn {
   background-color: #490046;
+  color: #cbff4d;
+}
+
+.btn:hover {
+  background-color: #cbff4d;
+  color: #490046;
+  transition: background-color 0.2s ease;
+}
+
+.btn-2 {
+  background-color: #cbff4d;
+  color: #490046;
+}
+
+.btn-2:hover {
+  background-color: #490046;
+  color: #cbff4d;
+  border-width: 2px;
+  border-color: #cbff4d;
+  transition: background-color 0.2s ease;
+}
+
+.btn,
+.btn-2 {
   border: solid;
   height: 40px;
   padding-left: 20px;
@@ -134,13 +160,32 @@ button {
   border-radius: 20px;
   font-size: 15px;
   font-weight: 700;
-  color: #cbff4d;
   transition: background-color 0.2s ease;
 }
 
-.btn-1:hover,
-.btn-2:hover {
+.btn:active {
+  background-color: #490046;
+  color: #cbff4d;
+  opacity: 0.8;
+}
+
+.btn-2:active {
   background-color: #cbff4d;
   color: #490046;
-  transition: background-color 0.2s ease;
+  opacity: 0.8;
+}
+
+.account:click {
+  color: red;
+}
+
+.about-section {
+  background-color: white;
+  width: 500px;
+  position: absolute;
+  z-index: -1;
+  align-items: center;
+  top: 0px;
+  height: 100%;
+  padding: 100px;
 }
