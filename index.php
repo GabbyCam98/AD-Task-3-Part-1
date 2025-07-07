@@ -30,7 +30,7 @@
 
 
     <main>
-        <div class="container landing">
+        <div class="container">
 
             <h1>Welcome to TravelEZ!</h1>
             <p>TravelEZ is a user-friendly website that provides a comprehensive timetable of bus routes across the
@@ -40,10 +40,10 @@
 
             <div>
                 <a href="pages/timetable/index.php">
-                    <button class="btn-1 proceed">Continue as Guest</button>
+                    <button class="btn">Continue as Guest</button>
                 </a>
                 <a href="pages/loginPage/index.php">
-                    <button class="btn-2 login">Log In</button>
+                    <button class="btn">Log In</button>
                 </a>
             </div>
 
