@@ -38,7 +38,7 @@ $currentTime = strtotime(date("H:i"));
 
 
 
-        <div class="container sign-up">
+        <div class="container">
 
             <!-- <img class="travelez-logo" src="/assets/img/travelez-purple.png" alt=""> -->
             <h1>Create Account</h1>
@@ -69,21 +69,17 @@ $currentTime = strtotime(date("H:i"));
                 <input type="text" id="password" name="password" placeholder="Enter Password" required>
 
                 <div class="action-buttons">
-                    <button type="submit" class="btn-1 submit">Sign Up</button>
-
+                    <button type="submit" class="btn">Sign Up</button>
                 </div>
-
 
             </form>
 
             <div>
                 Have an account?
-                <a href="../../pages/loginPage/index.php"> Log In</a>
-
+                <a class="account" href="../../pages/loginPage/index.php"> Log In</a>
             </div>
 
             <div class="db-connection-stat">
-
                 <?php
                 require_once('../../handlers/postgreChecker.handler.php');
                 require_once('../../handlers/mongodbChecker.handler.php');
