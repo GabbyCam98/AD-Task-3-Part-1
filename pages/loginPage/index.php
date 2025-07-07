@@ -39,7 +39,7 @@ $currentTime = strtotime(date("H:i"));
 
 
 
-        <div class="container login">
+        <div class="container">
 
             <!-- <img class="travelez-logo" src="/assets/img/travelez-purple.png" alt=""> -->
             <h1>Log In</h1>
@@ -57,7 +57,7 @@ $currentTime = strtotime(date("H:i"));
                 <input type="text" id="password" name="password" placeholder="Enter Password" required>
 
                 <div class="action-buttons">
-                    <button type="submit" class="btn-1 submit">Log In</button>
+                    <button type="submit" class="btn">Log In</button>
 
                 </div>
 
@@ -66,7 +66,7 @@ $currentTime = strtotime(date("H:i"));
 
             <div>
                 Not a member yet?
-                <a href="../../pages/signUp/index.php"> Create account</a>
+                <a class="account" href="../../pages/signUp/index.php"> Create account</a>
 
             </div>
 
