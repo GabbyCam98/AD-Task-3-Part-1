@@ -41,6 +41,9 @@ button {
   height: 25px;
 }
 
+#img-btn {
+  transition: opacity 0.16s ease-in-out;
+}
 .nav-header {
   background-color: #cbff4d;
   border: solid;

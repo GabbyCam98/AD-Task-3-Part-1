@@ -156,6 +156,7 @@ button {
   height: 40px;
   padding-left: 20px;
   padding-right: 20px;
+  margin: 10px 1px;
   border-width: 0px;
   border-radius: 20px;
   font-size: 15px;
@@ -173,10 +174,6 @@ button {
   background-color: #cbff4d;
   color: #490046;
   opacity: 0.8;
-}
-
-.account:click {
-  color: red;
 }
 
 .about-section {
