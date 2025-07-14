@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/init.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,10 +28,8 @@
 
     <!-- header section -->
     <?php
-    include_once("./layouts/header.layout.php");
+    include 'components/templates/header.component.php';
     ?>
-
-
 
     <main>
         <div class="container">
@@ -63,7 +65,7 @@
 
     <!-- footer section -->
     <?php
-    include_once('./layouts/footer.layout.php');
+    include '/components/templates/footer.component.php';
     ?>
 
 
