@@ -145,8 +145,7 @@ button {
 .btn-2:hover {
   background-color: #490046;
   color: #cbff4d;
-  border-width: 2px;
-  border-color: #cbff4d;
+  border: none;
   transition: background-color 0.2s ease;
 }
 
@@ -177,10 +176,11 @@ button {
 }
 
 .about-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: white;
   width: 500px;
-  position: absolute;
-  z-index: -1;
   align-items: center;
   top: 0px;
   height: 100%;
