@@ -1,10 +1,14 @@
 <?php
 
+require_once UTILS_PATH . '/envSetter.util.php';
+
 $host = "host.docker.internal";
 $port = "5116";
 $username = "user";
 $password = "password";
 $dbname = "taskManagerDB";
+
+$postgresqlCheckerResult = "";
 
 $conn_string = "host=$host port=$port dbname=$dbname user=$username password=$password";
 
@@ -17,3 +21,5 @@ if (!$dbconn) {
     echo "✔️ PostgreSQL Connection  <br>";
     pg_close($dbconn);
 }
+
+return $postgresqlCheckerResult;
