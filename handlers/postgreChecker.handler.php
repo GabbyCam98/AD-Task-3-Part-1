@@ -1,7 +1,7 @@
 <?php
 
 $host = "host.docker.internal";
-$port = "5511";
+$port = "5151";
 $username = "user";
 $password = "password";
 $dbname = "taskmanagerDB";
