@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/init.php';
+require_once __DIR__ . '/bootstrap.php';
 ?>
 
 <!DOCTYPE html>
@@ -56,8 +56,9 @@ require_once __DIR__ . '/init.php';
             <div class="db-connection-stat">
 
                 <?php
-                include('handlers/postgreChecker.handler.php');
-                include('handlers/mongodbChecker.handler.php');
+                include_once HANDLERS_PATH . '/postgreChecker.handler.php';
+                include_once HANDLERS_PATH . '/mongodbChecker.handler.php';
+
                 ?>
             </div>
 

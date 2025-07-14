@@ -1,4 +1,6 @@
 <?php
+require_once BASE_PATH . '/bootstrap.php';
+
 
 date_default_timezone_set("Asia/Manila"); // Set your timezone
 $currentTime = strtotime(date("H:i"));
@@ -20,18 +22,20 @@ $currentTime = strtotime(date("H:i"));
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/sections.css">
-
-
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/sections.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
 
 </head>
 
 <body>
 
+    <!-- header section -->
     <?php
-    include_once("../../layouts/header.layout.php");
+    include_once TEMPLATES_PATH . '/header.component.php';
     ?>
+
 
     <!-- Timetable section -->
     <main>
@@ -98,8 +102,7 @@ $currentTime = strtotime(date("H:i"));
 
     <!-- footer section -->
     <?php
-    include_once("../../layouts/footer.layout.php");
-    ?>
+    include TEMPLATES_PATH . '/footer.component.php'; ?>
 
 
 </body>

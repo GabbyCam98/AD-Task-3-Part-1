@@ -1,4 +1,6 @@
 <?php
+require_once BASE_PATH . '/bootstrap.php';
+
 require STATICDATAS_PATH . '/busRoutes.staticData.php';
 
 date_default_timezone_set("Asia/Manila"); // Set your timezone
