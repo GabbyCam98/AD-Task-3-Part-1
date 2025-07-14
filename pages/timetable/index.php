@@ -1,5 +1,5 @@
 <?php
-require '../../staticDatas/busRoutes.staticData.php';
+require STATICDATAS_PATH . '/busRoutes.staticData.php';
 
 date_default_timezone_set("Asia/Manila"); // Set your timezone
 $currentTime = strtotime(date("H:i"));
@@ -27,8 +27,10 @@ $busLogos = [
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/footer.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/sections.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
 
 </head>
 
@@ -36,9 +38,8 @@ $busLogos = [
 
     <!-- header section -->
     <?php
-    include_once "../../layouts/header.layout.php";
+    include_once TEMPLATES_PATH . '/header.component.php';
     ?>
-
 
     <!-- Timetable section -->
     <div class="content">
@@ -106,15 +107,15 @@ $busLogos = [
         }
         ?>
 
-        <a href="../../index.php">
-            <button class="btn-2">Return to Home</button>
-        </a>
+        <?php
+        include_once TEMPLATES_PATH . '/returnButton.component.php';
+        ?>
 
     </div>
 
     <!-- footer section -->
     <?php
-    include "../../layouts/footer.layout.php";
+    include_once TEMPLATES_PATH . '/footer.component.php';
     ?>
 
 

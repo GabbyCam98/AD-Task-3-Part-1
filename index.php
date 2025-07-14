@@ -17,8 +17,11 @@ require_once __DIR__ . '/init.php';
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/sections.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+
 
 
 
@@ -28,8 +31,9 @@ require_once __DIR__ . '/init.php';
 
     <!-- header section -->
     <?php
-    include 'components/templates/header.component.php';
+    include_once TEMPLATES_PATH . '/header.component.php';
     ?>
+
 
     <main>
         <div class="container">
@@ -65,7 +69,7 @@ require_once __DIR__ . '/init.php';
 
     <!-- footer section -->
     <?php
-    include '/components/templates/footer.component.php';
+    include TEMPLATES_PATH . '/footer.component.php';
     ?>
 
 

@@ -1,11 +1,3 @@
-<?php
-
-date_default_timezone_set("Asia/Manila"); // Set your timezone
-$currentTime = strtotime(date("H:i"));
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,8 +13,9 @@ $currentTime = strtotime(date("H:i"));
         rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/header.css">
     <link rel="stylesheet" href="/assets/css/sections.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
 
 
 
@@ -31,7 +24,7 @@ $currentTime = strtotime(date("H:i"));
 <body>
 
     <?php
-    include_once("../../layouts/header.layout.php");
+    include_once TEMPLATES_PATH . '/header.component.php';
     ?>
 
     <!-- Timetable section -->
@@ -88,7 +81,7 @@ $currentTime = strtotime(date("H:i"));
 
     <!-- footer section -->
     <?php
-    include_once("../../layouts/footer.layout.php");
+    include_once TEMPLATES_PATH . '/footer.component.php';
     ?>
 
 
