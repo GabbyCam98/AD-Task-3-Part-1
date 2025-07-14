@@ -38,7 +38,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: taskManagerDB
     ports:
-      - "5155:5432"
+      - "5116:5432"
     volumes:
       - ad-activity-3-postgresql:/data/db/postgresql
 
