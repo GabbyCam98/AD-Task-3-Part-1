@@ -14,15 +14,20 @@ $password = $databases['pgPassword'];
 $dbname = $databases['pgDB'];
 
 // connection
-
 $dsn = "pgsql:host={$databases['pgHost']};port={$port};dbname={$dbname}";
 $pdo = new PDO($dsn, $username, $password, [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 ]);
 
-// creation  
-echo "Applying schema from database/users.model.sql…\n";
+echo "Dropping old tables…\n";
+foreach ([
+    'projects',
+    'users',
+] as $table) {
+    $pdo->exec("DROP TABLE IF EXISTS {$table} CASCADE;");
+}
 
+echo "Applying schema from database/users.model.sql…\n";
 $sql = file_get_contents('database/users.model.sql');
 
 if ($sql === false) {
@@ -33,6 +38,4 @@ if ($sql === false) {
 
 $pdo->exec($sql);
 
-echo "✅ PostgreSQL reset complete!\n";
-
-
+echo "✅ PostgreSQL migration complete!\n";

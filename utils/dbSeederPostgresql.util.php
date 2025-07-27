@@ -1,13 +1,18 @@
 <?php
 declare(strict_types=1);
 
-require_once 'vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
-require_once 'bootstrap.php';
+require_once __DIR__ . '/../bootstrap.php';
 
 require_once UTILS_PATH . '/envSetter.util.php';
 
+if (!defined('DUMMIES_PATH')) {
+    define('DUMMIES_PATH', BASE_PATH . '/staticDatas/dummies');
+}
+
 $users = require_once DUMMIES_PATH . '/users.staticData.php';
+
 
 $host = $databases['pgHost'];
 $port = $databases['pgPort'];
@@ -44,9 +49,8 @@ foreach (['users'] as $table) {
 //seeding
 echo "Seeding users…\n";
 
-$stmt = $pdo->prepare("
-    INSERT INTO users (username, role, first_name, last_name, password)
-    VALUES (:username, :role, :fn, :ln, :pw)
+$stmt = $pdo->prepare("INSERT INTO users (username, role, first_name, last_name, password)
+VALUES (:username, :role, :fn, :ln, :pw)
 ");
 
 foreach ($users as $u) {
@@ -58,3 +62,5 @@ foreach ($users as $u) {
         ':pw' => password_hash($u['password'], PASSWORD_DEFAULT),
     ]);
 }
+
+echo "✅ PostgreSQL seeding complete!\n";
