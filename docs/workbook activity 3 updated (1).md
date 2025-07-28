@@ -78,9 +78,9 @@ Change the following:
 - [x] Add the checker in any pages and wait for either of the 2:
       All working:
       `html
-  ✅ Connected to MongoDB successfully.
-  ✅ PostgreSQL Connection
-  `
+✅ Connected to MongoDB successfully.
+✅ PostgreSQL Connection
+`
 
       Need Debugging:
       ```html
@@ -493,15 +493,15 @@ if (session_status() === PHP_SESSION_NONE) {
 
 in this part the code controls the flow of interaction depends on their logic using handlers functionality to attain specific goals
 
-- [ ] strategies what functionality must be done
-  - [ ] login
-    - [ ] receives data from front end
-    - [ ] use handlers function (`Auth`) to login
-    - [ ] respond accordingly based on the return value of util
-    - [ ] must receive a feedback in form of page or messages
-  - [ ] logout
-    - [ ] trigger from front end
-    - [ ] execute the command of logout from `Auth`
+- [x] strategies what functionality must be done
+  - [x] login
+    - [x] receives data from front end
+    - [x] use handlers function (`Auth`) to login
+    - [x] respond accordingly based on the return value of util
+    - [x] must receive a feedback in form of page or messages
+  - [x] logout
+    - [x] trigger from front end
+    - [x] execute the command of logout from `Auth`
 
 ## 14. Connecting Backend and Frontend Codes
 
@@ -509,8 +509,8 @@ after preparing the utility and handlers and after the front end designed the pa
 
 Login:
 
-- [ ] look for the form and indicate the `/handlers/auth.handler.php` will be used as the controller in method of `POST`.
-- [ ] double check that the `name` of inputs matches your receiver in the handlers key in `$_POST[]`
+- [x] look for the form and indicate the `/handlers/auth.handler.php` will be used as the controller in method of `POST`.
+- [x] double check that the `name` of inputs matches your receiver in the handlers key in `$_POST[]`
 
 ```php
 // ex.:
