@@ -2,7 +2,7 @@
 declare(strict_types=1);
 require_once BASE_PATH . '/bootstrap.php';
 require_once BASE_PATH . '/vendor/autoload.php';
-require_once UTILS_PATH . '/auth.utils.php';
+require_once UTILS_PATH . '/auth.util.php';
 require_once UTILS_PATH . '/envSetter.util.php';
 
 // Initialize session
@@ -27,6 +27,7 @@ $action = $_REQUEST['action'] ?? null;
 if ($action === 'login' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $usernameInput = trim($_POST['username'] ?? '');
     $passwordInput = trim($_POST['password'] ?? '');
+
 
     if (Auth::login($pdo, $usernameInput, $passwordInput)) {
         $user = Auth::user();
