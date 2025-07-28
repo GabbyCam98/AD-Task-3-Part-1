@@ -23,6 +23,7 @@ $pdo = new PDO($dsn, $username, $password, [
 
 $action = $_REQUEST['action'] ?? null;
 
+
 // LOGIN
 if ($action === 'login' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $usernameInput = trim($_POST['username'] ?? '');
