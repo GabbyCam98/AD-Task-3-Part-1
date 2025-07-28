@@ -42,4 +42,4 @@ renderMainLayout(function () {
         </div>
     </div>
 
-<?php }, 'About Us', ['css' => $pageCss]) ?>
+<?php }, 'Book A Trip', ['css' => $pageCss]) ?>
