@@ -1,58 +1,36 @@
 <?php
-require_once BASE_PATH . '/bootstrap.php';
+require_once LAYOUTS_PATH . '/main.layout.php';
 
-require STATICDATAS_PATH . '/busRoutes.staticData.php';
+$busRoutes = require STATICDATAS_PATH . '/busRoutes.staticData.php';
 
 date_default_timezone_set("Asia/Manila"); // Set your timezone
 $currentTime = strtotime(date("H:i"));
+
+$pageCss = [
+    '/assets/css/style.css',
+    '/assets/css/header.css',
+    '/assets/css/footer.css',
+    'assets/css/timetable.css'
+
+];
 
 $busLogos = [
     "Victory Liner" => "/assets/img/vli-logo.png",
     "Genesis Transport Service" => "/assets/img/genesis_colored.png",
     "Partas Trans" => "/assets/img/partas-wordmark.png"
 ];
-?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelEZ - Live Timetable</title>
-    <link rel="icon" href="../../assets/img/travelez-icon-green.png">
+renderMainLayout(function () use ($busLogos, $busRoutes) { ?>
 
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
 
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/sections.css">
-    <link rel="stylesheet" href="/assets/css/header.css">
-    <link rel="stylesheet" href="/assets/css/footer.css">
 
-</head>
-
-<body>
-
-    <!-- header section -->
-    <?php
-    include_once TEMPLATES_PATH . '/header.component.php';
-    ?>
-
-    <!-- Timetable section -->
     <div class="content">
 
-        <div class="database-checker-container">
-            <?php
-            require_once('../../handlers/postgreChecker.handler.php');
-            require_once('../../handlers/mongodbChecker.handler.php');
-            ?>
-        </div>
 
+
+        <h1>Live Bus Timetable</h1>
 
         <?php
 
@@ -109,19 +87,15 @@ $busLogos = [
         }
         ?>
 
-        <?php
-        include_once TEMPLATES_PATH . '/returnButton.component.php';
-        ?>
+        <a href="/index.php" class="btn-2">Return to home</a>
+
+        <div class="database-checker-container">
+            <?php
+            require_once HANDLERS_PATH . '/postgreChecker.handler.php';
+            require_once HANDLERS_PATH . '/mongodbChecker.handler.php';
+            ?>
+        </div>
 
     </div>
 
-    <!-- footer section -->
-    <?php
-    include_once TEMPLATES_PATH . '/footer.component.php';
-    ?>
-
-
-
-</body>
-
-</html>
+<?php }, 'TravelEZ - Live Timetable', ['css' => $pageCss]); ?>
