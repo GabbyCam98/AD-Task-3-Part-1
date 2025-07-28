@@ -12,6 +12,7 @@ function head($pageTitle, array $pageCss = [])
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?= htmlEscape($pageTitle ?? 'My Shop') ?></title>
+        <link rel="icon" type="image/x-icon" href="/assets/img/travelez-icon-green.png">
 
         <?php
         if (!empty($pageCss)) {
