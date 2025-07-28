@@ -40,12 +40,13 @@ function headerComponent(array $user = null): void
 
             <div class="left-section">
                 <a class="travelez-button" href="/index.php">
-                    <img src="../../assets/img/travelez-white.png" alt="travelEZ logo">
+                    <img id="travelez-button" src="/assets/img/travelez-white.png" alt="travelEZ logo">
                 </a>
                 <?php if (Auth::check() && $user): ?>
-                    <span class="username">
-                        <strong>Hello, <?php echo htmlspecialchars($user['username']); ?></strong>
-                    </span>
+                    <div class="user-info">
+                        <span class="username">Hello, <?php echo htmlspecialchars(ucfirst($user['username'])); ?></span>
+                        <span class="email"><?php echo htmlspecialchars(ucfirst($user['email'])); ?></span>
+                    </div>
                 <?php endif; ?>
             </div>
 

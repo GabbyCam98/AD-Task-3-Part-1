@@ -1,98 +1,116 @@
 header {
   display: flex;
+  background-color: var(--color-secondary);
+  box-shadow: 5px 2px 10px rgb(0, 0, 0, 0.3);
   position: fixed;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
+  justify-content: center;
+  top: 0px;
+  z-index: 5;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1600px;
+  width: 100%;
   height: 60px;
+  margin-left: auto;
+  margin-right: auto;
   top: 0px;
   left: 0px;
   right: 0px;
-  background-color: #490046;
-  box-shadow: 5px 2px 10px rgb(0, 0, 0, 0.3);
-}
-
-button {
-  font-family: "Roboto", Arial;
-  background: none;
-  border: none;
-}
-
-.left-section {
-  padding-left: 300px;
-}
-
-.middle-section {
-}
-
-.right-section {
-  padding-right: 300px;
 }
 
 .left-section,
 .middle-section,
 .right-section {
   display: flex;
+  flex-direction: row;
+  flex: 1;
   align-items: center;
 }
 
-.left-section,
-.middle-section,
+.left-section {
+  gap: 20px;
+  color: white;
+}
+
 .left-section img {
   height: 25px;
 }
 
-#img-btn {
-  transition: opacity 0.16s ease-in-out;
-}
-.nav-header {
-  background-color: #cbff4d;
-  border: solid;
-  height: 40px;
-  width: 120px;
-  border-width: 0px;
-  border-radius: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 15px;
-  font-weight: 700;
-  color: #61005c;
-  transition: background-color 0.2s ease;
+.middle-section {
+  justify-content: center;
 }
 
-.nav-header:hover {
-  background-color: transparent;
-  border-color: #cbff4d;
-  border-width: 2.4px;
-  color: #cbff4d;
+.middle-section a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 20px 20px;
+  font-weight: 600;
+  transition: all 0.1s ease-out;
 }
 
-.nav-btn {
-  background-color: #cbff4d;
+.middle-section a:hover {
+  color: var(--color-primary);
+}
+
+.middle-section a:active {
+  background-color: var(--color-primary);
   color: #490046;
 }
 
-.nav-btn:hover {
-  background-color: #490046;
-  color: #cbff4d;
-  border-width: 2px;
-  border-color: #cbff4d;
-  transition: background-color 0.2s ease;
+.middle-section.clicked {
+  background-color: var(--color-primary);
+  color: #490046;
 }
 
-.nav-btn {
-  border: solid;
-  height: 40px;
+.right-section {
+  justify-content: flex-end;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid white;
   padding-left: 20px;
-  padding-right: 20px;
-  border-width: 0px;
-  border-radius: 20px;
-  font-size: 15px;
-  font-weight: 700;
-  transition: background-color 0.2s ease;
 }
 
-.nav-btn:active {
-  background-color: #cbff4d;
-  color: #490046;
-  opacity: 0.8;
+.username {
+  font-size: small;
+  font-weight: bold;
+}
+
+.email {
+  font-size: x-small;
+}
+
+@media (min-width: 2560px) {
+  .header-container {
+    max-width: 1600px;
+  }
+}
+
+@media (min-width: 1366px) and (max-width: 1919px) {
+  .header-container {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .header-container {
+    max-width: 1000px;
+  }
+}
+
+#travelez-button {
+  content: url("/assets/img/travelez-white.png");
+  transition: opacity 0.3s ease;
+}
+
+#travelez-button:hover {
+  content: url("/assets/img/travelez-green.png");
 }
