@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1)
+declare(strict_types=1);
 
 include_once UTILS_PATH . '/envSetter.util.php';
 
@@ -24,7 +24,7 @@ class Auth
                 password,
                 role,
                 email
-                FROM public.\"User_table\"
+                FROM public.\"users\"
                 WHERE username = :usernameOrEmail OR email = :usernameOrEmail
             ");
             $stmt->execute([':usernameOrEmail' => $usernameOrEmail]);
@@ -50,7 +50,7 @@ class Auth
 
         // 2) Verify password
         if (!password_verify($password, $user['password'])) {
-            error_log("[Auth::login] Password mismatch for user_id={$user['userid']}");
+            error_log("[Auth::login] Password mismatch for user_id={$user['user_id']}");
             return false;
         }
 
