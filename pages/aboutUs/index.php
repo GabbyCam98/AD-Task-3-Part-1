@@ -1,40 +1,19 @@
 <?php
-require_once BASE_PATH . '/bootstrap.php';
+require_once LAYOUTS_PATH . '/main.layout.php';
 
-?>
+$pageCss = [
+    '/assets/css/style.css',
+    '/assets/css/header.css',
+    '/assets/css/footer.css',
+    'assets/css/about.css'
+];
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelEZ - About Us</title>
-    <link rel="icon" href="../../assets/img/travelez-icon-green.png">
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/sections.css">
-    <link rel="stylesheet" href="/assets/css/header.css">
-    <link rel="stylesheet" href="/assets/css/footer.css">
-
-</head>
-
-<body>
-
-    <!-- header section -->
-    <?php
-    include_once TEMPLATES_PATH . '/header.component.php';
+renderMainLayout(function () {
     ?>
+    <div class="overlay"></div>
+    <div class="page">
 
-    <main>
-
-        <div class="about-section">
+        <div class="container about-section">
             <h1>Our Story</h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas rutrum lectus non iaculis. Integer
@@ -58,21 +37,10 @@ require_once BASE_PATH . '/bootstrap.php';
                 vulputate pellentesque nisi, in mollis felis volutpat a. Nam eu volutpat quam. Quisque ultrices lectus
                 sed augue sagittis fermentum. Pellentesque ut ligula sit amet ipsum pretium varius.
             </p>
-            <?php
-            include_once TEMPLATES_PATH . '/returnButton.component.php';
-            ?>
+
+            <div class="action-buttons"><a href="/index.php" class="btn-2">Return to home</a></div>
         </div>
 
-        </div>
+    </div>
 
-    </main>
-
-
-    <!-- footer section -->
-    <?php
-    include TEMPLATES_PATH . '/footer.component.php';
-    ?>
-
-</body>
-
-</html>
+<?php }, 'About Us', ['css' => $pageCss]) ?>
