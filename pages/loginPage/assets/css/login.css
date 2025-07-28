@@ -1,0 +1,16 @@
+.page {
+  width: 100%;
+}
+
+.container {
+  width: 250px;
+  padding: 30px;
+}
+
+.action-buttons {
+  padding: 10px 0;
+}
+
+.submit {
+  width: 100%;
+}

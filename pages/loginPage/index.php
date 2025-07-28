@@ -1,61 +1,60 @@
 <?php
-require_once BASE_PATH . '/bootstrap.php';
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
-    <link rel="icon" href="../../assets/img/travelez-icon-green.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/sections.css">
-    <link rel="stylesheet" href="/assets/css/header.css">
-    <link rel="stylesheet" href="/assets/css/footer.css">
 
 
+require_once LAYOUTS_PATH . '/main.layout.php';
 
-</head>
+$mongoCheckerResult = require_once HANDLERS_PATH . '/mongodbChecker.handler.php';
+$postgresCheckerResult = require_once HANDLERS_PATH . '/postgreChecker.handler.php';
 
-<body>
+$pageCss = [
+    '/assets/css/header.css',
+    '/assets/css/footer.css',
+    'assets/css/login.css',
+    '/assets/css/style.css'
+];
 
-    <?php
-    include_once TEMPLATES_PATH . '/header.component.php';
-    ?>
+Auth::init();
 
-    <!-- Timetable section -->
-    <main>
+if (Auth::check()) {
+    header('Location: /index.php');
+    echo '<script>alert("User is already logged in, redirecting to index.php");</script>';
+    exit;
+}
 
 
 
-        <div class="container">
+$error = $_GET['error'] ?? '';
 
-            <!-- <img class="travelez-logo" src="/assets/img/travelez-purple.png" alt=""> -->
+renderMainLayout(function () use ($error) { ?>
+
+    <div class="page">
+
+        <!-- <img class="travelez-logo" src="/assets/img/travelez-purple.png" alt=""> -->
+        <div class="container login-form">
             <h1>Log In</h1>
 
+            <?php if ($error === 'login_required'): ?>
+                <div class="info-message"
+                    style="color: #0066cc; background-color: #e6f3ff; padding: 10px; border-radius: 5px; margin-bottom: 15px; border-left: 4px solid #0066cc;">
+                    <strong>Access Restricted:</strong> You must be logged in to access that page.
+                </div>
+            <?php endif; ?>
 
-            <form action="../../pages/loginPage/index.php" method="post">
+            <?php if ($error === 'invalid_credential'): ?>
+                <div class="error-message" style="color: red; margin-bottom: 10px;">
+                    Invalid username or password!
+                </div>
+            <?php endif; ?>
 
-                <label for="username">
-                    <p>Username: </p>
-                </label>
+            <form action="../../handlers/auth.handler.php?action=login" method="post">
+
+                <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Enter Username" required>
-                <label for="password">
-                    <p>Password: </p>
-                </label>
-                <input type="text" id="password" name="password" placeholder="Enter Password" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required>
 
-                <div class="action-buttons">
-                    <button type="submit" class="btn">Log In</button>
+                <div class="action-buttons submit">
+                    <button type="submit" class="btn-2 submit">Log In</button>
 
                 </div>
 
@@ -75,21 +74,8 @@ require_once BASE_PATH . '/bootstrap.php';
                 ?>
 
             </div>
-
         </div>
 
-    </main>
+    </div>
 
-
-
-
-
-    <!-- footer section -->
-    <?php
-    include_once TEMPLATES_PATH . '/footer.component.php';
-    ?>
-
-
-</body>
-
-</html>
+<?php }, 'Log In', ['css' => $pageCss]);

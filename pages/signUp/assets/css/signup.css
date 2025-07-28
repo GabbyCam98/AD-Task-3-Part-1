@@ -1,0 +1,32 @@
+.container {
+  padding: 20px 35px;
+}
+
+.signup-form {
+  width: 400px;
+  display: grid;
+}
+
+label {
+  color: rgb(60, 60, 60);
+}
+
+input {
+  width: 100%;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.input-row div {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-2 {
+  margin: 20px 0;
+  width: 100%;
+}

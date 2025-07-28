@@ -1,79 +1,72 @@
 <?php
-require_once BASE_PATH . '/bootstrap.php';
+
+require_once '../../bootstrap.php';
+require_once LAYOUTS_PATH . '/main.layout.php';
+require_once UTILS_PATH . '/auth.util.php';
+
+// Redirect logged-in users away from signup
+
+$pageCss = [
+    '../../assets/css/style.css',
+    '/assets/css/header.css',
+    '/assets/css/footer.css',
+    'assets/css/signup.css'
+];
+
+// Pull any flash errors and old input, then clear them
+$errors = $_SESSION['signup_errors'] ?? [];
+$old = $_SESSION['signup_old'] ?? [];
+unset($_SESSION['signup_errors'], $_SESSION['signup_old']);
 
 
-date_default_timezone_set("Asia/Manila"); // Set your timezone
-$currentTime = strtotime(date("H:i"));
+renderMainLayout(function () use ($errors, $old) { ?>
 
-?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Create Account</title>
-    <link rel="icon" href="../../assets/img/travelez-icon-green.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/sections.css">
-    <link rel="stylesheet" href="/assets/css/header.css">
-    <link rel="stylesheet" href="/assets/css/footer.css">
-
-</head>
-
-<body>
-
-    <!-- header section -->
-    <?php
-    include_once TEMPLATES_PATH . '/header.component.php';
-    ?>
-
-
-    <!-- Timetable section -->
-    <main>
-
-
+    <div class="page">
 
         <div class="container">
 
             <!-- <img class="travelez-logo" src="/assets/img/travelez-purple.png" alt=""> -->
             <h1>Create Account</h1>
 
+            <?php if (!empty($errors)): ?>
+                <div class="error-message" style="color: #dc3545; margin-bottom: 15px;">
+                    <ul>
+                        <?php foreach ($errors as $err): ?>
+                            <li><?= htmlspecialchars($err) ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            <?php endif; ?>
 
+            <form class="signup-form" action="../../handlers/signup.handler.php" method="post">
 
-            <form action="../../pages/signUp/index.php" method="post">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter Email"
+                    value="<?= htmlspecialchars($old['email'] ?? '') ?>" required>
 
-                <label for="first_name">
-                    <p>First name* </p>
-                </label>
-                <input type="text" id="first_name" name="first_name" placeholder="Enter First name" required>
-                <label for="middle_name">
-                    <p>Middle name </p>
-                </label>
-                <input type="text" id="middle_name" name="middle_name" placeholder="Enter Middle name">
-                <label for="last_name">
-                    <p>Last name* </p>
-                </label>
-                <input type="text" id="last_name" name="last_name" placeholder="Enter Last name" required>
-                <label for="username">
-                    <p>Username </p>
-                </label>
-                <input type="text" id="username" name="username" placeholder="Enter Username" required>
-                <label for="password">
-                    <p>Password* </p>
-                </label>
-                <input type="text" id="password" name="password" placeholder="Enter Password" required>
+                <div class="input-row">
+                    <div>
+                        <label for="first_name">First name</label>
+                        <input type="text" id="first_name" name="first_name" placeholder="Enter First name"
+                            value="<?= htmlspecialchars($old['first_name'] ?? '') ?>" required>
+                    </div>
+                    <div>
+                        <label for="last_name">Last name</label>
+                        <input type="text" id="last_name" name="last_name" placeholder="Enter Last name"
+                            value="<?= htmlspecialchars($old['last_name'] ?? '') ?>" required>
+                    </div>
+                </div>
+
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter Username"
+                    value="<?= htmlspecialchars($old['username'] ?? '') ?>" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                <label for="password">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter Password" required>
 
                 <div class="action-buttons">
-                    <button type="submit" class="btn">Sign Up</button>
+                    <button type="submit" class="btn-2">Sign Up</button>
                 </div>
 
             </form>
@@ -94,17 +87,5 @@ $currentTime = strtotime(date("H:i"));
 
         </div>
 
-    </main>
-
-
-
-
-
-    <!-- footer section -->
-    <?php
-    include TEMPLATES_PATH . '/footer.component.php'; ?>
-
-
-</body>
-
-</html>
+    </div>
+<?php }, 'Sign Up', ['css' => $pageCss]);
