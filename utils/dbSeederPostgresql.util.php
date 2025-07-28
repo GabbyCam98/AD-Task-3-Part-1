@@ -46,11 +46,12 @@ foreach (['users'] as $table) {
     $pdo->exec("TRUNCATE TABLE {$table} RESTART IDENTITY CASCADE;");
 }
 
+
 //seeding
 echo "Seeding users…\n";
 
-$stmt = $pdo->prepare("INSERT INTO users (username, role, first_name, last_name, password)
-VALUES (:username, :role, :fn, :ln, :pw)
+$stmt = $pdo->prepare("INSERT INTO users (username, role, first_name, last_name, password, email)
+VALUES (:username, :role, :fn, :ln, :pw, :email)
 ");
 
 foreach ($users as $u) {
@@ -60,6 +61,7 @@ foreach ($users as $u) {
         ':fn' => $u['first_name'],
         ':ln' => $u['last_name'],
         ':pw' => password_hash($u['password'], PASSWORD_DEFAULT),
+        ':email' => $u['email'],
     ]);
 }
 
