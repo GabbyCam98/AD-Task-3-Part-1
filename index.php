@@ -1,42 +1,38 @@
 <?php
-require_once __DIR__ . '/bootstrap.php';
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelEz - Know Where to Go, When to Go!</title>
-    <link rel="icon" href="./assets/img/travelez-icon-green.png">
+require_once 'bootstrap.php';
+require_once LAYOUTS_PATH . '/main.layout.php';
+require_once UTILS_PATH . '/auth.util.php';
 
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+$pageCss = [
+    'assets/css/style.css',
+    'assets/css/header.css',
+    'assets/css/footer.css'
+];
 
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/sections.css">
-    <link rel="stylesheet" href="/assets/css/header.css">
-    <link rel="stylesheet" href="/assets/css/footer.css">
+$pageJs = ['/assets/js/header.js'];
 
 
+$services = [
+    [
+        'service' => 'Live Timetable',
+        'description' => 'Know the schedule of the next bus'
+    ],
+    [
+        'service' => 'Book a trip',
+        'description' => 'Check the timetable and go!'
+    ]
+
+];
+
+renderMainLayout(function () use ($services) { ?>
 
 
-</head>
+    <div class="page landing">
 
-<body>
+        <section class="container welcome align-center">
 
-    <!-- header section -->
-    <?php
-    include_once TEMPLATES_PATH . '/header.component.php';
-    ?>
-
-
-    <main>
-        <div class="container">
 
             <h1>Welcome to TravelEZ!</h1>
             <p>TravelEZ is a user-friendly website that provides a comprehensive timetable of bus routes across the
@@ -44,36 +40,31 @@ require_once __DIR__ . '/bootstrap.php';
                 TravelEZ helps you explore available routes offered by various bus companies!</p>
 
 
-            <div>
-                <a href="pages/timetable/index.php">
-                    <button class="btn">Continue as Guest</button>
-                </a>
-                <a href="pages/loginPage/index.php">
-                    <button class="btn">Log In</button>
-                </a>
+            <div class="action-buttons">
+                <?php
+                $user = Auth::user();
+                if (Auth::check()):
+                    if (isset($user['role']) && strtolower($user['role']) === 'admin'): ?>
+                        <a class="btn-2" href="/pages/adminDashboard/index.php">Get Started (admmin)</a>
+                    <?php else: ?>
+                        <a class="btn-2" href="/pages/timetable/index.php">Get Started</a>
+                    <?php endif;
+                else: ?>
+                    <a class="btn-2" href="/pages/signUp/index.php">Create Account</a>
+                    <a href="/pages/loginPage/index.php" class="btn-2">Log In</a>
+                <?php endif; ?>
+
             </div>
 
             <div class="db-connection-stat">
-
                 <?php
-                include_once HANDLERS_PATH . '/postgreChecker.handler.php';
-                include_once HANDLERS_PATH . '/mongodbChecker.handler.php';
-
+                require_once HANDLERS_PATH . '/postgreChecker.handler.php';
+                require_once HANDLERS_PATH . '/mongodbChecker.handler.php';
                 ?>
             </div>
+        </section>
 
-        </div>
-
-
-
-    </main>
-
-    <!-- footer section -->
-    <?php
-    include TEMPLATES_PATH . '/footer.component.php';
-    ?>
+    </div>
 
 
-</body>
-
-</html>
+<?php }, 'TravelEz - Know Where to Go, When to Go!', ['css' => $pageCss, 'js' => $pageJs]); ?>

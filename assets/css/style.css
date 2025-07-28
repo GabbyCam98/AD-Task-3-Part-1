@@ -1,42 +1,128 @@
 body {
-  font-family: "Roboto", Arial;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: 100%;
-  background-color: rgb(236, 236, 236);
-  background-image: url(../../assets/img/img-travelez-bus-ai.png);
-  background-size: cover;
+  margin: 0;
+  background-color: rgb(248, 248, 248);
+  min-height: 100vh;
+  width: 100%;
+
+  background-image: url(/assets/img/img-travelez-bus-ai.png);
+  background-size: 70%;
+  width: 100%;
   background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+  background-position: top;
 }
 
 main {
-  width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  flex: 1;
+}
+
+form {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  padding: 10px 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(180, 180, 180);
+  margin-top: 4px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
 }
 
 h1 {
   color: #490046;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+label:has(+ input[required])::after {
+  content: " *";
+  color: #dc3545;
+  font-weight: bold;
+  margin-left: 2px;
 }
 
-img {
-  padding: 0px;
+label:has(input[required])::after {
+  content: " *";
+  color: #dc3545;
+  font-weight: bold;
+  margin-left: 2px;
 }
 
-button {
-  font-family: "Roboto", Arial;
+label:has(+ input[required]) p::after {
+  content: " *";
+  color: #dc3545;
+  font-weight: bold;
+}
+
+:root {
+  --color-primary: #cbff4d;
+  --color-secondary: #490046;
+}
+
+.page {
+  min-height: calc(100vh - 160px); /* Adjust for header and footer height */
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.landing {
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+}
+
+.container {
+  width: 600px;
+  height: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 2px 4px 7px rgb(0, 0, 0, 0.25);
+}
+
+.welcome {
+  padding: 30px 20px;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.container p {
+  margin: 20px 0px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.db-connection-stat {
+  padding: 10px 0;
 }
 
 .content {
@@ -50,21 +136,6 @@ button {
   margin-right: 0px;
   padding-top: 80px;
   padding-bottom: 70px;
-}
-
-.database-checker-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: 490046;
-  background-color: #cbff4d;
-  height: 35px;
-  width: 100%;
-  border-radius: 20px;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  margin-bottom: 30px;
-  margin-top: 20px;
 }
 
 .schedule-container {
@@ -84,6 +155,7 @@ button {
   border-radius: 20px;
   margin-bottom: 20px;
   height: 70px;
+  box-shadow: 2px 2px 7px rgb(0, 0, 0, 0.1);
 }
 
 .company-container h1 {
@@ -128,60 +200,62 @@ button {
 .btn {
   background-color: #490046;
   color: #cbff4d;
+  padding: 8px 20px;
+  transition: background-color 0.2s ease;
+  border: 2px solid var(--color-primary);
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
 .btn:hover {
   background-color: #cbff4d;
   color: #490046;
-  transition: background-color 0.2s ease;
 }
 
 .btn-2 {
-  background-color: #cbff4d;
-  color: #490046;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  padding: 8px 20px;
+  border: 2px solid var(--color-secondary);
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease-out;
 }
 
 .btn-2:hover {
-  background-color: #490046;
-  color: #cbff4d;
-  border: none;
-  transition: background-color 0.2s ease;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  color: var(--color-secondary);
 }
 
-.btn,
-.btn-2 {
-  border: solid;
-  height: 40px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 10px 1px;
-  border-width: 0px;
-  border-radius: 20px;
-  font-size: 15px;
-  font-weight: 700;
-  transition: background-color 0.2s ease;
+.account {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--color-secondary);
 }
 
-.btn:active {
-  background-color: #490046;
-  color: #cbff4d;
-  opacity: 0.8;
+.account:hover {
+  text-decoration: underline;
 }
 
-.btn-2:active {
-  background-color: #cbff4d;
-  color: #490046;
-  opacity: 0.8;
+@media (min-width: 2560px) {
+  .page {
+    max-width: 1600px;
+  }
 }
 
-.about-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: white;
-  width: 500px;
-  align-items: center;
-  top: 0px;
-  height: 100%;
-  padding: 100px;
+@media (min-width: 1366px) and (max-width: 1919px) {
+  .page {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .page {
+    max-width: 1000px;
+  }
 }
