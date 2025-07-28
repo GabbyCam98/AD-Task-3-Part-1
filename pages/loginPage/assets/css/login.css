@@ -3,7 +3,7 @@
 }
 
 .container {
-  width: 250px;
+  max-width: 250px;
   padding: 30px;
 }
 

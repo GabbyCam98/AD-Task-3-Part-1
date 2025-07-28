@@ -24,8 +24,9 @@ body::after {
   z-index: -1;
 }
 
-.container {
-  padding: 10px 0px;
+.content {
+  width: auto;
+  padding: 20px 30px;
 }
 
 .coming-soon-description {

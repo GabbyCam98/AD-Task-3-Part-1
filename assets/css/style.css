@@ -80,6 +80,7 @@ label:has(+ input[required]) p::after {
 }
 
 .landing {
+  width: 600px;
 }
 
 .overlay {
@@ -92,7 +93,6 @@ label:has(+ input[required]) p::after {
 }
 
 .container {
-  width: 600px;
   height: auto;
   background-color: white;
   display: flex;

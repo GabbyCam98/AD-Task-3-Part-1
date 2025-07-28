@@ -12,7 +12,7 @@ renderMainLayout(function () {
     ?>
 
     <div class="page">
-        <div class="container">
+        <div class="container content">
 
             <h1>Coming Soon!</h1>
             <div class="coming-soon-description">
