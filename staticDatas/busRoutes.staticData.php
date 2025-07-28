@@ -1,5 +1,5 @@
 <?php
-$busRoutes = [
+return [
     "Victory Liner" => [
         [
             "origin" => "Kamias",
