@@ -5,12 +5,12 @@
 <br />
 <div align="center">
   <a href="https://github.com/zyx-0314/">
-    <img src="./assets/img/gabcee-white-bold.png" alt="GabCamino" height="100">
+    <img src="/assets/img/travelez-green.png" alt="GabCamino" height="100">
   </a>
-  <h3 align="center">AD Activity 3</h3>
+  <h3 align="center">AD Task 3</h3>
 </div>
 <div align="center">
-  Short Description. (Optional)
+  TravelEZ is a user-friendly website that provides a comprehensive timetable of bus routes across the Philippines. Whether you're planning a trip from Manila to North Luzon or other key destinations, TravelEZ helps you explore available routes offered by various bus companies.
 </div>
 
 <br />
@@ -51,16 +51,38 @@
 
 ## Overview
 
-<!-- The following are just sample -->
+## Overview
 
-Description of the project in details.
+**TravelEZ** is a comprehensive web application that revolutionizes bus travel planning in the Philippines through an intuitive digital platform. Built with modern web development principles, it seamlessly integrates `back-end development`, `database management`, and `front-end development` to deliver a robust user experience.
+
+The platform empowers users to `create secure accounts`, `authenticate safely`, and access `real-time bus timetables` featuring major Philippine bus operators including Victory Liner, Genesis Transport Service, and Partas Trans. With `role-based access control` and `responsive design`, TravelEZ caters to both regular travelers and administrative users while maintaining optimal performance across all devices.
+
+**Core Functionality:**
+
+- **Real-Time Scheduling**: Live bus departure times with dynamic status indicators (Scheduled, Boarding, Departed)
+- **Route Coverage**: Comprehensive routes covering Manila to North Luzon and key destinations nationwide
+- **User Management**: Secure registration, authentication, and session handling with admin privileges
+- **Responsive Interface**: Mobile-first design ensuring seamless experience across desktop, tablet, and mobile devices
+- **Future Booking System**: Infrastructure ready for upcoming online ticket booking capabilities
+
+**Technical Excellence:**
+TravelEZ showcases professional-grade development practices through its MVC architecture, dual-database integration (PostgreSQL & MongoDB), automated database management via Composer scripts, and component-based design pattern. The application emphasizes security through password hashing, input validation, and proper session management while maintaining code quality through organized file structures and comprehensive documentation.
+
+Whether you're a daily commuter planning your route or a traveler exploring the Philippines, TravelEZ provides the reliable, up-to-date information you need to make informed travel decisions.
 
 ### Key Components
 
-<!-- The following are just sample -->
+- **Responsive Front-end Design**: A clean and intuitive user interface built with modern CSS, featuring a responsive navigation system, interactive elements, and a consistent visual design that adapts to different screen sizes and user authentication states.
 
-- Authentication & Authorization
-- CRUD Operations for Invetory System
+- **PostgreSQL & MongoDB Database Integration**: A robust dual-database architecture utilizing PostgreSQL for user management and authentication data, with MongoDB for additional data storage, ensuring scalable and efficient data management with automated connection checking.
+
+- **PHP MVC Architecture**: A well-structured back-end implementation using PHP with a Model-View-Controller pattern, featuring organized handlers for authentication and user actions, utility classes for database operations, and reusable components for consistent page layouts.
+
+- **User Authentication System**: A comprehensive login and registration system with session management, role-based access control (admin/user), password hashing, and secure user data handling with proper validation and error messaging.
+
+- **Live Bus Timetable System**: A dynamic timetable display showing real-time bus schedules across Philippines routes, with trip status indicators (Scheduled, Boarding, Departed) and route information from multiple bus companies including Victory Liner, Genesis Transport, and Partas Trans.
+
+- **Automated Database Management**: Built-in database utilities for automated table creation, data seeding, migration, and reset operations using Composer scripts, streamlining development and deployment processes.
 
 ### Technology
 
@@ -73,19 +95,12 @@ Description of the project in details.
 
 #### Framework/Library
 
-![CodeIgniter](https://img.shields.io/badge/CodeIgniter-EF4223?style=for-the-badge&logo=codeigniter&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 
 #### Databases
 
-![MySQL](https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
-
-#### Deployment
-
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
 ## Rules, Practices and Principles
 
@@ -150,9 +165,7 @@ AD-ProjectName
 
 ## Resources
 
-| Title        | Purpose                                                                       | Link          |
-| ------------ | ----------------------------------------------------------------------------- | ------------- |
-| Sample Title | Sample purpose would be here like this and this is the example of what it is. | trykolang.com |
-| Sample Title | Sample purpose would be here like this and this is the example of what it is. | trykolang.com |
-| Sample Title | Sample purpose would be here like this and this is the example of what it is. | trykolang.com |
-| Sample Title | Sample purpose would be here like this and this is the example of what it is. | trykolang.com |
+| Title               | Purpose                                          | Link          |
+| ------------------- | ------------------------------------------------ | ------------- |
+| Github CoPilot Chat | Proper code structure, troubleshooting, and tips |               |
+| w3schools           | Css design improvement                           | w3schools.com |
