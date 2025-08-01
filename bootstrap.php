@@ -9,6 +9,7 @@ define('STATICDATAS_PATH', realpath(BASE_PATH . '/staticDatas'));
 define('LAYOUTS_PATH', realpath(BASE_PATH . '/layouts'));
 define('ERRORS_PATH', realpath(BASE_PATH . '/errors'));
 define('UPLOADS_PATH', realpath(BASE_PATH . '/uploads'));
+define('ENVSETTER_PATH', realpath(UTILS_PATH . '/envSetter.util.php'));
 
 chdir(BASE_PATH);
 
