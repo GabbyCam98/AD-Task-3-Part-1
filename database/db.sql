@@ -1,3 +1,0 @@
--- Active: 1752395170525@@localhost@5155
-CREATE DATABASE taskManagerDB
-    DEFAULT CHARACTER SET = 'utf8mb4';

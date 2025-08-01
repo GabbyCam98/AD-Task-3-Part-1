@@ -6,5 +6,5 @@ CREATE TABLE IF NOT EXISTS public."users" (
       password varchar(225) NOT NULL,
       username varchar(225) NOT NULL,
       email varchar(225),
-      role varchar(225) NOT NULL DEFAULT 'user'
+      "role" varchar(225) NOT NULL DEFAULT 'user'
   );
